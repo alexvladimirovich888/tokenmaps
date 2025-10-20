@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trencher`s Map </title>
+    <title>Checking trench arena</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -62,7 +62,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
             position: relative;
-            animation: Trencher`s Map  0.5s ease-out;
+            animation: Checking trench arena 0.5s ease-out;
         }
         
         .token-marker:hover {
@@ -77,7 +77,7 @@
             object-fit: cover;
         }
         
-        @keyframes Trencher`s Map  {
+        @keyframes Checking trench arena {
             0% {
                 transform: scale(0);
                 opacity: 0;
@@ -560,7 +560,7 @@
     <div id="top-header">
         <div class="header-section">
             <div>
-                <div class="header-title">Trencher`s Map </div>
+                <div class="header-title">Checking trench arena</div>
                 <div class="header-subtitle">Live Solana Token Tracker</div>
             </div>
         </div>
@@ -769,8 +769,8 @@
             console.log('initializeTokenSystem called');
             
             // Check for cached tokens
-            const cachedTokens = localStorage.getItem('Trencher`s Map _tokens');
-            const cacheTime = localStorage.getItem('Trencher`s Map _cache_time');
+            const cachedTokens = localStorage.getItem('Checking trench arena_tokens');
+            const cacheTime = localStorage.getItem('Checking trench arena_cache_time');
             
             console.log('Cached tokens:', cachedTokens);
             console.log('Cache time:', cacheTime);
@@ -818,8 +818,8 @@
                 tokens = topTokens.slice(0, 100);
                 
                 // Cache tokens
-                localStorage.setItem('Trencher`s Map _tokens', JSON.stringify(tokens));
-                localStorage.setItem('Trencher`s Map _cache_time', Date.now().toString());
+                localStorage.setItem('Checking trench arena_tokens', JSON.stringify(tokens));
+                localStorage.setItem('Checking trench arena_cache_time', Date.now().toString());
                 
                 lastTokenUpdate = Date.now();
                 
@@ -836,7 +836,7 @@
                 }
                 
                 // Try to use cached data if available
-                const cachedTokens = localStorage.getItem('Trencher`s Map _tokens');
+                const cachedTokens = localStorage.getItem('Checking trench arena_tokens');
                 if (cachedTokens) {
                     tokens = JSON.parse(cachedTokens);
                     console.log('Using cached tokens:', tokens);
@@ -1061,7 +1061,7 @@
             // Update API status
             const apiStatus = document.getElementById('api-status');
             if (apiStatus) {
-                const cacheTime = localStorage.getItem('Trencher`s Map _cache_time');
+                const cacheTime = localStorage.getItem('Checking trench arena_cache_time');
                 if (cacheTime) {
                     const cacheAge = Date.now() - parseInt(cacheTime);
                     const hoursOld = Math.floor(cacheAge / (1000 * 60 * 60));
@@ -1219,8 +1219,8 @@
 
         function refreshTokens() {
             // Clear cache to force fresh data
-            localStorage.removeItem('Trencher`s Map _tokens');
-            localStorage.removeItem('Trencher`s Map _cache_time');
+            localStorage.removeItem('Checking trench arena_tokens');
+            localStorage.removeItem('Checking trench arena_cache_time');
             
             // Clear existing tokens
             activeTokens.forEach(token => {
